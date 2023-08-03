@@ -14,7 +14,7 @@ def Pdf_to_MP3(file_path='test.pdf', language='en'):
             pages = [page.extract_text() for page in pdf.pages]
 
         text = ''.join(pages)
-        text = text.replace('\n','')
+        text = text.replace('\n', '')
 
         mp3 = gTTS(text=text, lang=language)
         file_name = Path(file_path).stem
@@ -23,7 +23,7 @@ def Pdf_to_MP3(file_path='test.pdf', language='en'):
         return f'-> {file_name}.mp3 saved successfully!'
 
     else:
-        return 'File not exists, check the file path!'
+        return 'File not found, check the file path!'
 
 
 def main():
