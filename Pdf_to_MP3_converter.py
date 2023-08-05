@@ -12,13 +12,13 @@ def Pdf_to_MP3(file_path='test.pdf', language='en'):
 
         with pdfplumber.PDF(open(file=file_path, mode='rb')) as pdf:
             pages = [page.extract_text() for page in pdf.pages]
-
+ file_name = Path(file_path).stem
+        mp3.save(f'{file_name}.mp3')
         text = ''.join(pages)
         text = text.replace('\n', '')
 
         mp3 = gTTS(text=text, lang=language)
-        file_name = Path(file_path).stem
-        mp3.save(f'{file_name}.mp3')
+
 
         return f'-> {file_name}.mp3 saved successfully!'
 
