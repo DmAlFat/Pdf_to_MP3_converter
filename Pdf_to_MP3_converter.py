@@ -59,7 +59,8 @@ def click():
 
             mp3 = gTTS(text=text, lang=language_input.strip())
             file_name = Path(filepath).stem
-            mp3.save(f'{file_name}.mp3')
+            file_directory = filedialog.askdirectory()
+            mp3.save(f'{file_directory}\{file_name}.mp3')
 
             return open_info()
         else:
