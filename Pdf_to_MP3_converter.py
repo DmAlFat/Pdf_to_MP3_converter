@@ -68,7 +68,7 @@ def click():
 
     close_button = ttk.Button(window, text="Choose a PDF file for convertation", command=Pdf_to_MP3_converter)
     close_button.pack(anchor="center", expand=1)
-    label2 = ttk.Label(window, text="v.1.0")
+    label2 = ttk.Label(window, text="v.1.1")
     label2.pack(anchor=SW, expand=1)
     label1 = ttk.Label(window, text="Developed by DmAlFat")
     label1.pack(anchor=SE)
