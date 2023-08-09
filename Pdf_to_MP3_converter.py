@@ -25,7 +25,7 @@ def dismiss(window):
 def click():
     window = Toplevel()
     window.title("PDF to MP3 converter")
-    window.geometry("340x180+700+400")
+    window.geometry("340x180+820+400")
     window.iconphoto(False, icon)
     window.protocol("WM_DELETE_WINDOW", lambda: dismiss(window))
     editor = Text(window, height=1)
