@@ -6,13 +6,13 @@ from pathlib import Path
 from tkinter.messagebox import showerror, showinfo
 
 root = Tk()
-root.geometry("320x80+750+400")
+root.geometry("477x80+750+400")
 root.title("PDF to MP3 converter")
 icon = PhotoImage(file="icon.png")
 root.iconphoto(False, icon)
 
-label = ttk.Label(text="This program is designed to convert PDF file to MP3 file.")
-label.pack(anchor=NW, padx=10, pady=10)
+label = ttk.Label(text="This program is developed to convert PDF file to MP3 file.\nAttention! An Internet connection is required for the correct operation of the program.")
+label.pack(anchor=N, padx=10, pady=10)
 
 language_input = 'ru'
 
@@ -68,7 +68,7 @@ def click():
 
     close_button = ttk.Button(window, text="Choose a PDF file for convertation", command=Pdf_to_MP3_converter)
     close_button.pack(anchor="center", expand=1)
-    label2 = ttk.Label(window, text="v.1.1")
+    label2 = ttk.Label(window, text="v.1.2")
     label2.pack(anchor=SW, expand=1)
     label1 = ttk.Label(window, text="Developed by DmAlFat")
     label1.pack(anchor=SE)
