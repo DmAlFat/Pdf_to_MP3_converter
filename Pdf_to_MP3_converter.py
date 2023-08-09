@@ -14,7 +14,7 @@ root.iconphoto(False, icon)
 label = ttk.Label(text="This program is developed to convert PDF file to MP3 file.\nAttention! An Internet connection is required for the correct operation of the program.")
 label.pack(anchor=N, padx=10, pady=10)
 
-language_input = 'ru'
+language_input = 'en'
 
 
 def dismiss(window):
@@ -25,12 +25,12 @@ def dismiss(window):
 def click():
     window = Toplevel()
     window.title("PDF to MP3 converter")
-    window.geometry("510x160+700+400")
+    window.geometry("340x180+700+400")
     window.iconphoto(False, icon)
     window.protocol("WM_DELETE_WINDOW", lambda: dismiss(window))
     editor = Text(window, height=1)
     editor.pack(anchor=N, fill=X)
-    label = ttk.Label(window, text="1) Enter the language of the PDF file and click the select button.\n2) Select a PDF file using the corresponding button and wait for the conversion to complete.")
+    label = ttk.Label(window, text="1) Enter language ('en' or 'ru') and click apply (Default: en)\n2) Select pdf file and save file path\n3) Wait for the conversion to complete")
     label.pack(anchor=N, padx=10, pady=10)
 
 
@@ -38,7 +38,7 @@ def click():
         global language_input
         language_input = editor.get("1.0", "2.0")
 
-    close_button1 = ttk.Button(window, text="Choose language ('en' or 'ru')", command=get_text)
+    close_button1 = ttk.Button(window, text="Apply language", command=get_text)
     close_button1.pack(anchor="s", expand=1)
 
     def open_info():
@@ -66,9 +66,9 @@ def click():
         else:
             return open_error()
 
-    close_button = ttk.Button(window, text="Choose a PDF file for convertation", command=Pdf_to_MP3_converter)
+    close_button = ttk.Button(window, text="Select pdf file and save file path", command=Pdf_to_MP3_converter)
     close_button.pack(anchor="center", expand=1)
-    label2 = ttk.Label(window, text="v.1.2")
+    label2 = ttk.Label(window, text="v.1.3")
     label2.pack(anchor=SW, expand=1)
     label1 = ttk.Label(window, text="Developed by DmAlFat")
     label1.pack(anchor=SE)
