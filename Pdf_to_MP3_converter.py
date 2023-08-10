@@ -25,27 +25,27 @@ def dismiss(window):
 def click():
     window = Toplevel()
     window.title("PDF to MP3 converter")
-    window.geometry("285x195+840+400")
+    window.geometry("290x200+840+400")
     window.iconphoto(False, icon)
     window.protocol("WM_DELETE_WINDOW", lambda: dismiss(window))
-    label = ttk.Label(window, text="1) Select language | Default: en")
+    label = ttk.Label(window, text="1) Select language | Default: English")
     label.pack(anchor=N)
 
 
     def selected(event):
         global language_input
-        language_input = combobox.get()
-        label3["text"] = f"Selected language: {language_input}"
+        language_input = languages[combobox.get()]
+        label3["text"] = f"Selected language: {combobox.get()}"
 
-    languages = ["en", "ru"]
+    languages = {'English': "en", 'Русский': "ru", 'French': 'fr', 'Portuguese': 'pt', 'Spanish': 'es'}
 
     label3 = ttk.Label(window)
     label3.pack(anchor=N, fill=X, padx=5, pady=5)
-    combobox = ttk.Combobox(window, values=languages, state="readonly")
+    combobox = ttk.Combobox(window, values=list(languages), state="readonly")
     combobox.pack(anchor=N, fill=X, padx=5, pady=5)
     combobox.bind("<<ComboboxSelected>>", selected)
-    label4 = ttk.Label(window, text="2) Select pdf file and save file path\n3) Wait for the conversion to complete")
-    label4.pack(anchor=N, padx=10, pady=10)
+    label4 = ttk.Label(window, text="2) Select pdf file and save file path")
+    label4.pack(anchor=N, padx=5, pady=5)
 
     def open_info():
         showinfo(title="Done", message=f'Mp3 saved successfully!')
@@ -74,8 +74,10 @@ def click():
 
     close_button = ttk.Button(window, text="Select pdf file and save file path", command=Pdf_to_MP3_converter)
     close_button.pack(anchor="center", expand=1)
-    label2 = ttk.Label(window, text="v.2.0")
-    label2.pack(anchor=SW, expand=1)
+    label5 = ttk.Label(window, text="3) Wait for the conversion to complete...")
+    label5.pack(anchor=N, padx=5, pady=5)
+    label2 = ttk.Label(window, text="v.2.1")
+    label2.pack(anchor=SW)
     label1 = ttk.Label(window, text="Developed by DmAlFat")
     label1.pack(anchor=SE)
     window.grab_set()
