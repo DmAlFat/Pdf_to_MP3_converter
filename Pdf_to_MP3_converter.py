@@ -45,7 +45,7 @@ def click():
     combobox = ttk.Combobox(window, values=list(languages), state="readonly")
     combobox.pack(anchor=N, fill=X, padx=5, pady=5)
     combobox.bind("<<ComboboxSelected>>", selected)
-    label4 = ttk.Label(window, text="2) Select pdf file and save file path")
+    label4 = ttk.Label(window, text="2) Select pdf file and the path to the saving file")
     label4.pack(anchor=N, padx=5, pady=5)
 
     def open_info():
@@ -73,7 +73,7 @@ def click():
         else:
             return open_error()
 
-    close_button = ttk.Button(window, text="Select pdf file and save file path", command=Pdf_to_MP3_converter)
+    close_button = ttk.Button(window, text="Select pdf file and the path to the saving file", command=Pdf_to_MP3_converter)
     close_button.pack(anchor="center", expand=1)
     label5 = ttk.Label(window, text="3) Wait for the conversion to complete...")
     label5.pack(anchor=N, padx=5, pady=5)
