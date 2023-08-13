@@ -38,8 +38,9 @@ def click():
         label3["text"] = f"Selected language: {combobox.get()}"
 
     languages = {'English': "en", 'Русский': "ru", 'French': 'fr', 'Portuguese': 'pt', 'Spanish': 'es'}
+    inverse_languages = {v: k for k, v in languages.items()}
 
-    label3 = ttk.Label(window)
+    label3 = ttk.Label(window, text=f"Selected language: {inverse_languages[language_input]}")
     label3.pack(anchor=N, fill=X, padx=5, pady=5)
     combobox = ttk.Combobox(window, values=list(languages), state="readonly")
     combobox.pack(anchor=N, fill=X, padx=5, pady=5)
