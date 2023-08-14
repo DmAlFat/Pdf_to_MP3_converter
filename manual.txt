@@ -1,0 +1,5 @@
+1) Clone this repository on your PC
+2) If you only want to use the application as intended, unzip the archive and run .exe file
+   If you want to make changes to the code:
+   - install requirements from requirements.txt (pip install -r requirements.txt)
+   - open Pdf_to_MP3_converter.py
